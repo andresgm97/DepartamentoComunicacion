@@ -1,0 +1,74 @@
+PUBLICAR DEPARTAMENTOCOMUNICACION EN GITHUB PAGES
+
+El ZIP contiene el proyecto listo para subir, con publicación manual mediante
+GitHub Actions. No se ha creado ningún repositorio remoto ni publicado la web.
+No necesitas instalar Node.js ni ejecutar comandos para seguir estos pasos.
+
+1. EXTRAER EL ZIP
+   Extrae DepartamentoComunicacion-GitHub.zip en una carpeta de tu ordenador.
+   Dentro deben aparecer package.json, src y .github, entre otros archivos.
+
+2. CREAR O ABRIR EL REPOSITORIO
+   Entra en https://github.com/new y crea el repositorio con este nombre exacto:
+   DepartamentoComunicacion
+
+   Para usar GitHub Pages con una cuenta gratuita, el repositorio debe ser Public.
+   El código y los diálogos serán visibles. Si ya tienes el repositorio, ábrelo.
+   Si tiene contenido propio, guarda una copia antes de reemplazar archivos.
+
+3. SUBIR LOS ARCHIVOS
+   En el repositorio: Add file > Upload files.
+   Si está vacío, utiliza el enlace uploading an existing file.
+   Arrastra TODO EL CONTENIDO de la carpeta extraída, incluidas src y .github.
+   No subas el ZIP ni arrastres la carpeta contenedora como una carpeta adicional.
+   package.json debe quedar en la raíz del repositorio, junto a src y .github.
+   Confirma los cambios en la rama main con Commit changes.
+
+   Comprueba especialmente que existe .github/workflows/deploy.yml.
+   Si .github no se ha subido, utiliza Add file > Create new file, escribe
+   .github/workflows/deploy.yml como nombre y copia dentro el texto del archivo
+   deploy.yml incluido en el ZIP. Confirma los cambios.
+
+4. ACTIVAR GITHUB PAGES
+   En el repositorio abre Settings > Pages.
+   En Build and deployment > Source selecciona GitHub Actions.
+   No selecciones Deploy from a branch ni crees otro workflow: ya está incluido.
+
+5. PUBLICAR
+   Abre la pestaña Actions del repositorio.
+   Selecciona Publicar en GitHub Pages en el panel de la izquierda.
+   Pulsa Run workflow, selecciona main y confirma con Run workflow.
+   Si Actions te pide habilitar los workflows del repositorio, habilítalos primero.
+   Espera a que build y deploy terminen con marca verde.
+   Se instalan las dependencias, se ejecutan las 82 pruebas y se compila la app.
+   Si fallan las pruebas o el build, no se publica.
+
+6. ABRIR Y COMPARTIR
+   El resultado del trabajo deploy muestra el enlace publicado.
+   También puedes verlo en Settings > Pages > Visit site cuando esté disponible.
+   Si tu usuario es andresgm97 y mantienes el nombre del repositorio, será:
+   https://andresgm97.github.io/DepartamentoComunicacion/
+   Ese enlace solo estará activo cuando termine correctamente el despliegue.
+   Pruébalo en el móvil y después compártelo por WhatsApp.
+
+7. ACTUALIZACIONES POSTERIORES
+   Sube los archivos modificados a main y vuelve a Actions > Publicar en GitHub
+   Pages > Run workflow. La publicación es manual; cada subida no despliega sola.
+   Los datos del evento están en src/config/event.ts.
+
+SI ALGO FALLA
+- No aparece el workflow: comprueba .github/workflows/deploy.yml en la rama main.
+- No aparece Run workflow: comprueba que el archivo está en la rama predeterminada
+  del repositorio (normalmente main), recarga Actions y selecciona el workflow.
+- Error en configure-pages o deploy: revisa Settings > Pages > Source = GitHub Actions.
+- Error en npm ci: comprueba que subiste package.json y package-lock.json en la raíz.
+- Página vacía o assets 404: conserva el nombre exacto DepartamentoComunicacion.
+  Si lo cambias, cambia también base en vite.config.ts a /NUEVO-NOMBRE/ y republica.
+- 404 justo después de publicar: espera unos minutos y usa el enlace de deploy.
+- El chat recuerda un personaje anterior: es la persistencia local prevista;
+  puedes cambiarlo mediante Cambiar identidad.
+
+DOCUMENTACIÓN OFICIAL
+https://vite.dev/guide/static-deploy.html#github-pages
+https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages
+https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository
