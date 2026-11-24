@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Residencia Estela//Departamento de Comunicacion//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dc-2711@residencia-estela
+DTSTAMP:20261124T150000Z
+DTSTART:20261127T203000Z
+SUMMARY:Celebración · Residencia Estela
+LOCATION:Parte de abajo de la casa de Estela
+DESCRIPTION:Invitación oficial del Departamento de Comunicación. A partir de 21:30. Se recomienda transporte compartido.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Celebración · Residencia Estela
+TRIGGER:-PT3H
+END:VALARM
+END:VEVENT
+END:VCALENDAR
